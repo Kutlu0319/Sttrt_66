@@ -2,8 +2,8 @@
     {
         "iconUrl": "https://kariyer.trt.net.tr/wp-content/uploads/2022/01/trt-kariyer-logo.png",
         "apiVersion": 1,
-        "repositoryUrl": "https://github.com/kadireksi/kreaStream",
-        "fileSize": 24620,
+        "repositoryUrl": "https://github.com/Kutlu0319/Sttrt_66",
+        "fileSize": 24360,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -16,7 +16,7 @@
         "version": 1,
         "internalName": "Trt",
         "description": "TRT Canl\u0131 Yay\u0131n ve Diziler",
-        "url": "https://raw.githubusercontent.com/kadireksi/kreaStream/builds/Trt.cs3",
+        "url": "https://raw.githubusercontent.com/Kutlu0319/Sttrt_66/builds/Trt.cs3",
         "name": "Trt"
     }
 ]
