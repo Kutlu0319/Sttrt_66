@@ -8,4 +8,3 @@ cloudstream {
     tvTypes = listOf("TvSeries", "Live")
     iconUrl = "https://kariyer.trt.net.tr/wp-content/uploads/2022/01/trt-kariyer-logo.png"
 }
-
