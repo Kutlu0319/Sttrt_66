@@ -50,11 +50,15 @@ jobs:
       - name: Android SDK Ayarla
         uses: android-actions/setup-android@v3.2.2
 
+      #- name: Gradle Cache Temizle (Opsiyonel)
+        #run: rm -rf ~/.gradle/caches/
+
       - name: Eklentileri Derle
         run: |
           cd $GITHUB_WORKSPACE/src
           chmod +x gradlew
-          ./gradlew make makePluginsJson
+          # Temiz build ve tüm görevleri yeniden çalıştır
+          ./gradlew clean :Trt:make :Trt:makePluginsJson --no-daemon --rerun-tasks
           cp **/build/*.cs3 $GITHUB_WORKSPACE/builds
           cp build/plugins.json $GITHUB_WORKSPACE/builds
 
@@ -64,5 +68,5 @@ jobs:
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
           git add .
-          git commit -m "$GITHUB_SHA 'nın Derlenmesi" || exit 0   # eğer commit edilecek bir şey yoksa hata verme
+          git commit -m "$GITHUB_SHA 'nın Derlenmesi" || exit 0   # commit edilecek bir şey yoksa hata verme
           git push --force
