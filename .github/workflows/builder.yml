@@ -57,8 +57,10 @@ jobs:
         run: |
           cd $GITHUB_WORKSPACE/src
           chmod +x gradlew
-          # Temiz build ve tüm görevleri yeniden çalıştır
-          ./gradlew clean :Trt:make :Trt:makePluginsJson --no-daemon --rerun-tasks
+          # Temiz build: sadece Trt modülünü derle
+          ./gradlew clean :Trt:make --no-daemon --rerun-tasks
+          # Ana proje için plugins.json üret
+          ./gradlew :makePluginsJson --no-daemon
           cp **/build/*.cs3 $GITHUB_WORKSPACE/builds
           cp build/plugins.json $GITHUB_WORKSPACE/builds
 
